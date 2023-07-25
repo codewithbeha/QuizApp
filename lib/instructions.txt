@@ -1,0 +1,144 @@
+//ReadMe file Explore what i do in this app.
+
+before we go to design ui let make some constant variables
+- create a seperate file.
+
+-lets create our home page.
+
+-lets delete all the default code and start from scratch.
+
+  -lets start work on UI.
+  -change background color and the appBar first.
+  -import the constats.dart to home page because it has out colors.
+
+  -lets add some questions.
+
+  - now let create our questions widget.
+  -lets add it to our homepage.
+  -with that our question widget is ready.
+
+  -im going to build 'Next Question' button.
+  -add it to floating action button.
+  -lets add some fuctions to button.
+  -like when we click next question will show.
+  -to do it we need to pass total question number and the index to it. //we need to pass a function which make all work.
+  - we have an error becuase when i click button twice it change from 1 to 2. in list we have only 2 question (0,1) so it didnt the third.
+  -to fix that add some conditions.
+  -it fixed.
+
+  -now lets setting the button.
+    - lets create our costum widget for opstion.
+    - lets add it to homescreen.
+    -make it clickable.
+    -we need to change color when is clickd.
+    -now that cheating we cant let user know answers . lets us some condistions about it.
+    -if user click then change the color other wise no.
+    -we need to put a function to know where isPressed values.
+    -now here is another problem when isPressed the nextQuestion the colors shows like before is unchanged the isPressed.
+    -lets fix it we do it in 'nextQuestion' function. 
+    -now is fixed let's go for other part.
+
+    - now there is a little problem. when user click next page he go in next page we dont want that we want if user dont select
+    any we want to show a message if he want to contiune need a click. lets fix.
+    -the up problem is fixed.
+
+     -lets go for another one.
+     -lets add some score to show in our app.
+     -lets give some functions our score.
+     -when the user answer is currectly of a question then the score go up other wise no.
+     -//lets remove the gesture detector from inside optioncard and put it into parent widget.
+      -and thats a problem it increases even thought the user already selected once.
+     -lets fix it. to checkAnswerAndUpdate make a condictions and isAlreadySelected = true
+     -let's make it's value to false on nextQuestion isAlreadySelected = false;
+  - finish for now is fine lets go.
+
+  -part 8
+  -alright everything looks good so far but, i want to change something
+  you see when the color of our optioncard changes the Text on the area is a little 
+  hard to read.
+  i want to make it so when the color changes the color of our text will change too.
+  -HOW IT work
+  -code of two colors 
+  -these two colors have same combinations of blue;
+  -so if the color we provide here doesnt have the same combination of red,
+  and green then its the neutral color we created before , and the text color
+  will become black and if the red and green are same then its either red or green color 
+  to sum it up it darker color the its gona display our neutral color .
+
+  -sorry if you got confused play with colors and u will get it.
+
+  part 9
+  -now lets create a result box at the end of our quiz. it's gona show the 
+  result of user.
+  -lets create our dialog box in a separate file.
+  -that's are our result box.
+
+  part 10
+  -now lets add a button to start the quiz from start.
+  -//now we need a fuction to do the work
+  -//we will create that in the home screen.dart
+  -we have another problem we cant select wrong question.
+  it is fixed now. 
+
+  part 11 connectiong to a database.
+  
+  -let's start working in database. go to 'firebase.google.com'
+  -you have to login to use the firebase services.
+  -once logged in, click on 'go to console' and then create a project.
+  -once created, then click on 'realtime database'. create a database in 'test mode'.
+
+  -let's make a separate file for database actions. 'db_connect
+  -to connect to database , fire base has it's own package for flutter,
+  to advanced subject so we will use the lightweight 'http' package.
+  enter ' flutter pub add http' in terminal.
+
+  -let's start creating our functions.
+  -firebase understands json data so we have to convert our questions to json format.
+  -to do that we use another package called 'convert' which is build in 'dart'.
+
+  -let's try to add a question in database.
+  -create an object for 'DBConnect' class in main.dart and add a question.
+  -hot restart to run the main method.
+  -that's how you add a question in database.
+
+  part 12 fetch data from database
+  -let's fetch the questios from the database.
+  
+  -use the same method we used to add questions.
+  -that's how you fetch questions from the database.
+
+  part 13 adding more questions
+  -let's add some more data to database.
+   - ok let's try to fetch these.
+   -the function is already there. so just hot restart it.
+   -so we can see the questions we added.
+
+  part 14 Convert the data?
+  - time to display the questions from our database in our app.
+    - first of all , when we fetch the data from our database it's in a,
+    'Map<dynamic, dynamic>' format. we have to convert it to 'Map<String, dynamic>'.
+
+    -then we need each 'key, value' pair to a question.
+    -then we need some plase to save these questions we created.
+    -this error occured because our 'options' is in Map<String, dynamic> format.
+    -we need that in Map<String, bool> format. -/to convert it use Map.cast method.
+    (Map.castFrom)
+
+  Part 15 
+
+  -now we need to replace the in app questions to the questions we fetched from database.
+
+
+  -with that now we are fetching the questions from database, and
+  displaying to our app.
+
+  -there you have it. the simple quiz app that fetching data from database.
+  -we don't need the addQuestion method anymore.
+  -but if you want add question directly from app the i have the method in comment.
+  
+  -now the app is done.
+
+  //This app created by Behar Abdyli
+  
+
+
